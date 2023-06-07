@@ -39,10 +39,12 @@ h1 {
   width: 90%;
   font-size: 1.25rem;
   text-align: center;
+  text-shadow: 3px 3px 5px #00ACF7;
 }
 
 h2 {
-  font-size: 1.1rem
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 5px #00ACF7;
 }
 
 .input {
@@ -83,7 +85,7 @@ textarea::placeholder {
 p {
   list-style: none;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #FFF79A;
   padding: 0.5em;
   font-size: .8rem;
   line-height: 1rem;
