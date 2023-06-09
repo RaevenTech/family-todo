@@ -39,7 +39,7 @@ onValue(remindersInDB, function(snapshot){
       let currentReminder = reminderArray[i]
       let currnetReminderID = currentReminder[0]
       let currnetReminderValue = currentReminder[1]
-      
+
       appendReminderToReminderListEl(currentReminder)
     }
   } else {
@@ -62,7 +62,7 @@ function appendReminderToReminderListEl(reminder){
 
   // append new reminder to the list and the DB
   let newReminderEl=document.createElement("p")
-  newReminderEl.innerHTML = reminderValue
+  newReminderEl.textContent = reminderValue
 
   //remove a reminder from the list and the DB
   newReminderEl.addEventListener("dblclick", function(){
