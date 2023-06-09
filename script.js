@@ -15,6 +15,7 @@ const textInputFieldEl = document.getElementById("text-input")
 const publishBtn = document.getElementById("publish-btn")
 const reminderListEL = document.getElementById("reminder-list")
 
+
 //================================================================
 // add reminder to the Db nad app screen
 publishBtn.addEventListener("click", function(){
@@ -36,6 +37,9 @@ onValue(remindersInDB, function(snapshot){
 
     for(let i = 0; i < reminderArray.length; i++){
       let currentReminder = reminderArray[i]
+      let currnetReminderID = currentReminder[0]
+      let currnetReminderValue = currentReminder[1]
+      
       appendReminderToReminderListEl(currentReminder)
     }
   } else {
@@ -46,7 +50,7 @@ onValue(remindersInDB, function(snapshot){
 
 // ================================================================
 function clearReminderInputEl(){
-  textInputFieldEl.innerHTML = ""
+  textInputFieldEl.value = ""
 }
 function clearReminderListEl(){
   reminderListEL.innerHTML = ""
