@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
-
 const appSettings = {
   databaseURL:"https://soloprojectscrimba-default-rtdb.europe-west1.firebasedatabase.app/"
 }
@@ -29,11 +28,10 @@ publishBtn.addEventListener("click", function(){
 //================================================================
 // fetch reminder from the DB to display
 onValue(remindersInDB, function(snapshot){
-  
   if(snapshot.exists()){
     let reminderArray = Object.entries(snapshot.val())
 
-    clearReminderListEl()
+    reminderListEL.innerHTML = ""
 
     for(let i = 0; i < reminderArray.length; i++){
       let currentReminder = reminderArray[i]
@@ -51,9 +49,6 @@ onValue(remindersInDB, function(snapshot){
 // ================================================================
 function clearReminderInputEl(){
   textInputFieldEl.value = ""
-}
-function clearReminderListEl(){
-  reminderListEL.innerHTML = ""
 }
 
 function appendReminderToReminderListEl(reminder){
